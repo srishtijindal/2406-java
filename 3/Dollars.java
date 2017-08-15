@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Dollars {
+
+    /**
+     * Created by sony on 08/08/2017
+     * @param args
+     */
+    public static void main(String[] args)
+    {
+//Create a Scanner
+        Scanner input = new Scanner(System.in);
+
+//Receive the amount
+        System.out.print("Enter an amount in double,: ");
+        double amount = input.nextDouble();
+
+        int remainingAmount = (int)(amount * 100);
+
+//Find the number of one dollars
+        int numberOfOneDollars = remainingAmount / 100;
+        remainingAmount %= 100;
+
+//Find the number of quarters in the remaining amount
+        int numberOfQuarters = remainingAmount / 25;
+        remainingAmount %= 25;
+
+//Find the number of dimes in the remaining amount
+        int numberOfDimes = remainingAmount / 10;
+        remainingAmount %= 10;
+
+//Find the number of nickels in the remaining amount
+        int numberOfNickels = remainingAmount / 5;
+        remainingAmount %= 5;
+
+//Find the number of pennies in the remaining amount
+        int numberOfPennies = remainingAmount;
+
+//Display results
+        System.out.println("Your amount " + amount + " consists of \n" +
+                "\t" + numberOfOneDollars + " dollars\n" +
+                "\t" + numberOfQuarters + " quarters\n" +
+                "\t" + numberOfDimes + " dimes\n" +
+                "\t" + numberOfNickels + " nickels\n" +
+                "\t" + numberOfPennies + " pennies\n");
+    }
+
+}
